@@ -1,7 +1,5 @@
 Welcome to your Linux command reference vault. This collection of notes is designed to provide a clear and concise guide for beginners using the Linux terminal.
 
-Use the links below to navigate to the different sections. Each page covers a specific aspect of using the Linux shell, from basic navigation to server maintenance.
-
 ---
 
 ### [[01 - Core Commands]]
