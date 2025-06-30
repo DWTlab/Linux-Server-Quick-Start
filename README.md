@@ -13,6 +13,8 @@ Welcome to your Linux command reference vault. This collection of notes is desig
 | `Ctrl + C` | Force-stops the currently running command. |
 | `Ctrl + Z` | Pauses the current command (can be resumed later). |
 
+---
+
 ## 📁 Navigating the Filesystem
 
 | Command | Description |
@@ -23,6 +25,8 @@ Welcome to your Linux command reference vault. This collection of notes is desig
 | `cd <directory>` | **C**hange **D**irectory to the specified path (e.g., `cd /home/user/Documents`). |
 | `cd ..` | Moves you up one directory level. |
 | `cd ~` or `cd` | Navigates directly to your home directory from anywhere. |
+
+---
 
 ## 🛠️ Creating, Moving, and Deleting
 
@@ -35,7 +39,8 @@ Welcome to your Linux command reference vault. This collection of notes is desig
 | `rm <file>` | **R**e**m**oves a file. **This is permanent and cannot be undone.** |
 | `rmdir <directory>` | **R**e**m**oves an *empty* **dir**ectory. |
 | `rm -r <directory>` | Removes a directory and all of its contents. **Use with extreme caution.** |
-Once you can navigate, the next step is to see what's inside your files and find what you're looking for.
+
+---
 
 ## 📝 Viewing File Contents
 
@@ -46,12 +51,16 @@ Once you can navigate, the next step is to see what's inside your files and find
 | `head <file>` | Displays the first 10 lines of a file. Use `head -n 20` for the first 20 lines. |
 | `tail <file>` | Displays the last 10 lines of a file. Use `tail -n 20` for the last 20 lines, or `tail -f` to watch for new lines in real-time. |
 
+---
+
 ## ✏️ Simple File Editing
 
 | Command | Description |
 |---|---|
 | `nano <file>` | Opens a simple, beginner-friendly terminal-based text editor. |
 | `vim <file>` or `vi <file>` | Opens the powerful (but more complex) Vim text editor. |
+
+---
 
 ## 🔎 Finding Files and Text
 
@@ -60,7 +69,8 @@ Once you can navigate, the next step is to see what's inside your files and find
 | `find <dir> -name "<pattern>"` | Searches for files within a directory (`<dir>`) that match a name (`<pattern>`). E.g., `find . -name "*.txt"`. |
 | `grep "<text>" <file>` | Searches for a specific text pattern inside a file. It prints every line that contains the match. |
 | `grep -r "<text>" <dir>` | **R**ecursively searches for a text pattern in all files within a directory. |
-These commands help you monitor your system's resources, manage processes, and control user access.
+
+---
 
 ## 💻 System & Resource Information
 
@@ -73,6 +83,8 @@ These commands help you monitor your system's resources, manage processes, and c
 | `top` or `htop` | Displays a real-time, dynamic list of running processes and resource usage. `htop` is more user-friendly (install with `sudo apt install htop`). |
 | `ip a` | Shows your network adapter information, including your IP **a**ddress. |
 
+---
+
 ## ⚙️ Process Management
 
 | Command | Description |
@@ -81,6 +93,8 @@ These commands help you monitor your system's resources, manage processes, and c
 | `kill <PID>` | **Kill**s a process with the specified **P**rocess **ID**. |
 | `killall <process_name>` | Kills all processes with the specified name (e.g., `killall firefox`). |
 
+---
+
 ## 👤 User Management
 
 | Command | Description |
@@ -88,9 +102,10 @@ These commands help you monitor your system's resources, manage processes, and c
 | `whoami` | Displays the current user's username. |
 | `sudo <command>` | **S**uper**u**ser **do**; executes a command with administrator privileges. |
 | `passwd` | Allows you to change your own password. |
-A step-by-step walkthrough for setting up a new Linux Mint server, specifically for hosting Plex and Audiobookshelf.
 
-### Basic Firewall Security (UFW)
+---
+
+## 🛡️ Basic Firewall Security (UFW)
 | Command | Description |
 |---|---|
 | `sudo ufw status` | Checks if the firewall is active. |
@@ -102,7 +117,9 @@ A step-by-step walkthrough for setting up a new Linux Mint server, specifically 
 | `sudo ufw enable` | **Turns the firewall on.** |
 | `sudo ufw reload`| Reloads the firewall rules after making a change. |
 
-### Installing Plex & Audiobookshelf
+---
+
+##  🏴‍☠️ Installing Plex & Audiobookshelf
 For both, you must first download the `.deb` installation file from their official websites.
 - **Plex:** [plex.tv/media-server-downloads](https://www.plex.tv/media-server-downloads/)
 - **Audiobookshelf:** [github.com/advplyr/audiobookshelf/releases](https://github.com/advplyr/audiobookshelf/releases)
@@ -112,7 +129,9 @@ For both, you must first download the `.deb` installation file from their offici
 | `cd ~/Downloads` | Navigates to the folder where you downloaded the files. |
 | `sudo dpkg -i <package_name>.deb` | Installs the application from the `.deb` file. Use the actual file name. |
 
-### Managing Services
+---
+
+## 🧰 Managing Services
 | Command | Description |
 |---|---|
 | `sudo systemctl status <service>` | Checks if a service is running (e.g., `plexmediaserver`, `audiobookshelf`). |
@@ -121,7 +140,9 @@ For both, you must first download the `.deb` installation file from their offici
 | `sudo systemctl stop <service>` | Manually stops a service. |
 | `sudo systemctl restart <service>` | Manually restarts a service. |
 
-### Media Permissions
+---
+
+## 🔒 Media Permissions
 This is crucial for allowing Plex and Audiobookshelf to see your media files.
 1. Create your media folders (e.g., `sudo mkdir -p /mnt/media/movies`).
 2. Set permissions:
@@ -130,7 +151,10 @@ This is crucial for allowing Plex and Audiobookshelf to see your media files.
 |---|---|
 | `sudo chown -R $USER:$USER /path/to/media` | Changes the owner of the media folder to you (`$USER` is a variable for your username). |
 | `sudo chmod -R 775 /path/to/media` | Sets Read/Write/Execute permissions for you and the group, and Read/Execute for others. |
-### Software Update & Cleanup
+
+---
+
+## 🧹 Software Update & Cleanup
 
 This is your main weekly task. It gets all the latest security patches and feature updates for your system and applications.
 
@@ -143,30 +167,34 @@ This is your main weekly task. It gets all the latest security patches and featu
 | `sudo apt clean` | Clears the local cache of downloaded package files to free up disk space. |
 | `flatpak uninstall --unused -y`| The Flatpak equivalent of `autoremove`. It removes any unused Flatpak runtimes. |
 
-### All-in-One Update Command
+---
+
+## 🐧 All-in-One Update Command
 For a quick weekly tune-up, you can chain the most common commands together. This single line will update your system, update your flatpaks, and remove any leftover packages.
 
 ```bash
 sudo apt update && sudo apt upgrade -y && flatpak update -y && sudo apt autoremove -y
 ```
 
-### System Health & Cleanup
+---
+
+## 🖥️ System Health
 
 Here are three key commands for checking system health and clearing out old files.
 
-#### Check for Failed Services
+#### ❌ Check for Failed Services
 This is the most important health check. It will tell you if any background processes have crashed or failed to start. An empty output from this command is a good sign.
 ```bash
 systemctl --failed
 ```
 
-#### Clean Up System Logs
+#### 📔 Clean Up System Logs
 Over time, system log files can grow very large. This command will safely shrink the logs to a more manageable size (e.g., 100MB).
 ```bash
 sudo journalctl --vacuum-size=100M
 ```
 
-#### Empty the Trash
+#### 🗑️ Empty the Trash
 This command will forcefully empty your user's trash can. Be certain before running, as this cannot be undone.
 ```bash
 rm -rf ~/.local/share/Trash/files/*
